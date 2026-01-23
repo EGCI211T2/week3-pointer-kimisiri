@@ -5,21 +5,32 @@
 
 using namespace std;
 
-int main(int argc,char *argv[]){
-  int n = argc - 1; // ignore the command itself i guess 
-  /*int n;
+int get_dynamic_array_from_input_yay(int* &arr) {
+  // returns: array size, also point arr to the result array
+  int n;
   printf("How many number do u need > ");
-  scanf("%d", &n);*/
-  int* pa = new int[n];
-
-  /*printf("Input this array : ");
+  scanf("%d", &n);
+  arr = new int[n];
   for (int i = 0; i < n; i++) {
-    scanf("%d", pa+i);
-  }*/
-  for (int i = 1; i < n+1; i++) {
-    //printf("%d = %s\n", i, argv[i]);
-    *(pa+i-1) = atoi(argv[i]);
+    scanf("%d", arr+i);
   }
+  return n;
+}
+
+int get_array_from_args(int argc, char* argv[], int* &arr) {
+  int n = argc - 1;
+  arr = new int[n];
+  for (int i = 1; i < n+1; i++) {
+    arr[i-1] = atoi(argv[i]);
+  }
+  return n;
+}
+
+int main(int argc,char* argv[]){
+  int* pa;
+
+  int n = get_array_from_args(argc, argv, pa);
+  //int n = get_dynamic_array_from_input_yay(pa); // can uncomment this to take input from stdin instead :D
 
   printf("Your array : ");
   for (int i = 0; i < n; i++) {
