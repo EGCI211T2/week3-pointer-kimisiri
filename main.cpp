@@ -15,20 +15,18 @@ int main(int argc,char *argv[]){
     scanf("%d", pa+i);
   }
 
-  printf("Your array : [");
+  printf("Your array : ");
   for (int i = 0; i < n; i++) {
     printf("%d ", pa[i]);
   }
-  printf("]\n");
+  printf("\n");
 
-  printf("Your array reversed : [");
+  printf("Your array reversed : ");
   for (int i = 0; i < n; i++) {
     printf("%d ", pa[n-i-1]);
   }
-  printf("]\n");
+  printf("\n");
 
   delete[] pa;
-  
-
   return 0;
 }
