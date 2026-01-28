@@ -29,8 +29,8 @@ int get_array_from_args(int argc, char* argv[], int* &arr) {
 int main(int argc,char* argv[]){
   int* pa;
 
-  //int n = get_array_from_args(argc, argv, pa);
-  int n = get_dynamic_array_from_input_yay(pa); // can uncomment this to take input from stdin instead :D
+  int n = get_array_from_args(argc, argv, pa);
+  //int n = get_dynamic_array_from_input_yay(pa); // can uncomment this to take input from stdin instead :D
 
   printf("Your array : ");
   for (int i = 0; i < n; i++) {
